@@ -25,13 +25,13 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: fuseim.pri/ifs
+              value: nfs-storage
             - name: NFS_SERVER
-              value: 192.168.1.20
+              value: 192.168.2.40
             - name: NFS_PATH
-              value: /mnt/kube_nfs
+              value: /srv/nfs4/share
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 192.168.1.20
-            path: /mnt/kube_nfs
+            server: 192.168.2.40
+            path: /srv/nfs4/share
